@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+	    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<title>CICSC监控平台</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/app.css" />
+		<link rel="stylesheet" type="text/css" href="jquery-SearchBar/css/search-form.css">
+		<link rel="stylesheet" type="text/css" href="css/css3buttons.css">
+	</head>
+	
+	<body class="bg02">
+		<header class="header">
+			<h3>CICSC监控平台</h3>
+		</header>
+		
+		<div class="wrapper">
+			<div class="container-fluid">
+
+				<div align="center">
+					<input id="time_range" type="range" class="custom-range"  min="25000"
+						   max="73000" value="0" style="width: 1200px;" oninput="change_time()"/>
+				</div>
+
+				<div align="center" style="color:white">
+					Time:&nbsp;
+					<label id = "show_time" style="width:100px">00 : 00 : 00</label>
+					&nbsp;&nbsp;&nbsp;
+					Second:&nbsp;
+					<label id = "show_second" style="width:100px">00 : 00 : 00</label>
+				</div>
+				<div align="center">
+					<input id="stop_button" type="button" value="Stop" onclick="stop_button()" />
+					<select id = "day_select">
+						<option value="1">day1</option>
+						<option value="2">day2</option>
+						<option value="3">day3</option>
+					</select>
+					<input id="data_button" type="button" value="Data" onclick="showSelected()" />
+					<div style="display: inline-block;color: white;" >Tag:</div>
+					<select id = "usetag">
+						<option value="0">off</option>
+						<option value="1">on</option>
+					</select>
+					<input id="clear_button" type="button" value="Clear" onclick="clear_all_tag()" />
+				</div>
+				<div class="row fill-h">
+					<div class="col-lg-6 fill-h">
+						<div class="xpanel-wrapper xpanel-wrapper-1">
+							<div class="xpanel">
+								<h4>人员实时位置示意图</h4>
+									<div align="center" style="padding: 2px">
+										<canvas id="canvas" width="1800" height="960" style="width:900px;height:480px"></canvas>
+										<canvas id="canvas2" width="1800" height="960" style="width:900px;height:480px"></canvas>
+									</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 fill-h">
+						<div class="xpanel-wrapper xpanel-wrapper-2">
+							<div class="xpanel">
+								<h4>各地点人数实时对比</h4>
+								<div id="container1" style="height: 100%;padding: 2px;"></div>
+							</div>
+						</div>
+						<div class="xpanel-wrapper xpanel-wrapper-2">
+							<div class="xpanel">
+								<h4>人员组成特征分析</h4>
+								<div id="container2" style="height: 100%;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/echarts-3.8.5.min.js"></script>
+		<script type="text/javascript" src="js/echarts-bmap.js"></script>
+		<script src="js/jquery.timer.js"></script>
+		<script src = "js/js-colormaps.js"></script>
+		<script src="layer/layer.js"></script>
+		<script src = "shine.js"></script>
+		<script src="barchart.js"></script>
+		<script src="parallel2.js"></script>
+		<script src="usetag.js"></script>
+		<script src="dark.js"></script>
+		<script src="Draw.js"></script>
+	</body>
+</html>
