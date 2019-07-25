@@ -1,4 +1,4 @@
-[在线演示地址](https://github.com/seriousAA/SDU-VIS-DIY)
+[在线演示地址](https://seriousaa.github.io/SDU-VIS-DIY/)
 
 使用说明：
 
